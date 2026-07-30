@@ -3,7 +3,7 @@
 // Swap the `benches` array for a database query later and nothing else changes.
 //
 // TEST SAFEGUARD: every seed row below is status: "test" with a T-prefixed id.
-// Deleting the test benches is a five-line change - remove the five entries.
+// Deleting the test benches is a five-line change, remove the five entries.
 // -----------------------------------------------------------------------------
 
 export type Bench = {
@@ -26,7 +26,7 @@ export type Bench = {
   photo?: string
 }
 
-// NOTE: coordinates are approximate placeholders - verify before relying on them.
+// NOTE: coordinates are approximate placeholders, verify before relying on them.
 const benches: Bench[] = [
   {
     id: 'T1',
@@ -91,5 +91,5 @@ export function getPlacedBenches(): Bench[] {
 export const stock = {
   benchesPlaced: benches.filter((b) => b.status === 'placed').length,
   availableNow: 55, // 64 pews less 5 to the allotments group and 4 to the Irish Centre
-  timberMetres: 175, // approximate - confirm before launch
+  timberMetres: 175, // approximate, confirm before launch
 }

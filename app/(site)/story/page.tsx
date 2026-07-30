@@ -25,7 +25,7 @@ export default function StoryPage() {
       <div className="my-10 overflow-hidden rounded-2xl border border-border">
         <Image
           src="/images/timber-grain.png"
-          alt="The grain of an old pew  -  honey where freshly cut, dark where hands have worn it"
+          alt="The grain of an old pew, honey where freshly cut, dark where hands have worn it"
           width={900}
           height={560}
           className="h-full w-full object-cover"
@@ -42,22 +42,21 @@ export default function StoryPage() {
           It starts at St Patrick&apos;s
         </h2>
         <p>
-          The first batch came from St Patrick&apos;s Church in Newton-le-Willows  -  sixty-four pews
+          The first batch came from St Patrick&apos;s Church in Newton-le-Willows, sixty-four pews
           of pitch pine, saved as the building came out of use. That&apos;s where the idea got its
           legs, but it isn&apos;t the whole of it. More buildings and other salvaged woods will
           follow, so mostly we&apos;ll just call it old timber.
         </p>
         <p>
-          Of those sixty-four, some go out as they are. That&apos;s the extent of what we do to them:
-          we save the timber, fix a small numbered tag to it, and arrange transfer case by case. Five
-          went to an allotments group and four to the Irish Centre before we started counting
-          properly.
+          Of those sixty-four, some go out just as they are. We don&apos;t do much to them: we save
+          the timber, fix a small numbered tag on, and sort out getting it to you. Five went to an
+          allotments group and four to the Irish Centre before we started counting properly.
         </p>
 
         <h2 className="pt-4 font-serif text-2xl font-semibold text-primary">The little tag</h2>
         <p>
-          Each bench gets a small plastic tag with its own number and a QR code  -  quiet, tucked to
-          one side, easy to miss. Scan it and you get a question to ask whoever&apos;s next to you.
+          Each bench gets a small plastic tag with its own number and a QR code, quiet, tucked to one
+          side, easy to miss. Scan it and you get a question to ask whoever&apos;s next to you.
           That&apos;s all it does. No app, no sign-up, nothing to buy.
         </p>
       </div>

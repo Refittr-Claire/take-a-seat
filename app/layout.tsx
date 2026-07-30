@@ -18,14 +18,14 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL('https://takeaseat.org.uk'),
   title: {
-    default: 'Take a Seat - a bench to sit next to someone',
+    default: 'Take a Seat, somewhere to sit next to someone',
     template: '%s · Take a Seat',
   },
   description:
     'Old church pews, saved from the skip and given away free to the places people go to be a little less alone. Request a bench for your community.',
   generator: 'v0.app',
   openGraph: {
-    title: 'Take a Seat - a bench to sit next to someone',
+    title: 'Take a Seat, somewhere to sit next to someone',
     description:
       'Old church pews, saved from the skip and given away free to the places people go to be a little less alone.',
     type: 'website',

@@ -7,7 +7,7 @@
 // short sentence; must never be intrusive.
 //
 // This list needs review by someone with dementia-care experience before the
-// tags are manufactured - the QR is permanent, this list is not.
+// tags are manufactured, the QR is permanent but this list is not.
 //
 // Approved suggestions from /prompts/submit are pasted in here BY HAND. There is
 // deliberately no code path from a submission to this array.

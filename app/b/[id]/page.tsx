@@ -22,7 +22,7 @@ export default async function BenchPromptPage({
 
   return (
     <main className="flex min-h-dvh flex-col bg-background px-6 py-10">
-      {/* Gentle top line  -  sets the tone, no logo shouting */}
+      {/* Gentle top line, sets the tone, no logo shouting */}
       <p className="text-center text-base text-muted-foreground">
         Have a seat. Here&apos;s a little something to talk about.
       </p>

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/logo'
 
 const links = [
   { href: '/find', label: 'Find a bench' },
@@ -22,9 +23,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3" aria-label="Main">
-        <Link href="/" className="flex items-center gap-2 rounded-sm font-serif text-xl font-semibold text-primary">
-          <span aria-hidden className="text-2xl leading-none">&#9679;</span>
-          Take a Seat
+        <Link href="/" aria-label="Take a Seat, home" className="rounded-sm">
+          <Logo className="text-xl" />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

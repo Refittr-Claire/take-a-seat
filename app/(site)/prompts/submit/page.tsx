@@ -4,7 +4,7 @@ import { SuggestForm } from '@/components/suggest-form'
 export const metadata: Metadata = {
   title: 'Suggest a question',
   description:
-    'Suggest a gentle conversation starter for the benches. A person reads every one  -  nothing is published automatically.',
+    'Suggest a gentle conversation starter for the benches. A person reads every one, nothing is published automatically.',
 }
 
 export default function SuggestPromptPage() {
@@ -15,7 +15,7 @@ export default function SuggestPromptPage() {
           Suggest a question
         </h1>
         <p className="mt-5 text-pretty text-xl leading-relaxed text-muted-foreground">
-          The best questions are the easy ones  -  simple to answer, and just as easy to leave. If one
+          The best questions are the easy ones, simple to answer, and just as easy to leave. If one
           comes to mind, send it our way.
         </p>
       </header>

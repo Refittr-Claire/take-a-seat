@@ -1,15 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Logo } from '@/components/logo'
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-serif text-xl font-semibold text-primary">Take a Seat</p>
-          <p className="mt-3 max-w-xs text-pretty text-muted-foreground">
-            Old church pews, saved from the skip and given away free - somewhere to sit down next to
-            someone.
+          <Logo className="text-3xl" tagline />
+          <p className="mt-6 max-w-xs text-pretty text-muted-foreground">
+            Old church pews, saved from the skip and given away free, so there&apos;s somewhere to
+            sit down next to someone.
           </p>
           <p className="mt-4">
             <Link href="/request" className="font-medium text-primary underline underline-offset-4">

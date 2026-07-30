@@ -4,7 +4,7 @@ import { RequestForm } from '@/components/request-form'
 export const metadata: Metadata = {
   title: 'Request a bench',
   description:
-    'Ask for a free salvaged-pew bench for your community space in Merseyside. No cost, no catch  -  just tell us where it will go.',
+    'Ask for a free salvaged-pew bench for your community space in Merseyside. No cost, no catch, just tell us where it will go.',
 }
 
 export default function RequestPage() {
@@ -16,7 +16,7 @@ export default function RequestPage() {
         </h1>
         <p className="mt-5 text-pretty text-xl leading-relaxed text-muted-foreground">
           Tell us where it&apos;ll go and we&apos;ll take it from there. It&apos;s free, and
-          there&apos;s no catch  -  we just need enough to find you the right one.
+          there&apos;s no catch. We just need enough to find you the right one.
         </p>
       </header>
 

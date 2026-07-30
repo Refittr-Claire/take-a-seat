@@ -15,7 +15,7 @@ async function send({ to, subject, text, replyTo }: SendArgs) {
   const key = process.env.RESEND_API_KEY
   if (!key) {
     // No key yet: log so the flow still works end-to-end during the POC.
-    console.log('[v0] RESEND_API_KEY not set - email not sent. Would have sent:', {
+    console.log('[v0] RESEND_API_KEY not set, email not sent. Would have sent:', {
       to,
       subject,
       replyTo,
@@ -69,7 +69,7 @@ export async function sendBenchRequest(data: {
     text: [
       `Hello ${data.name},`,
       '',
-      "Thanks for asking for a bench - we've got your message and someone will be in touch.",
+      "Thanks for asking for a bench, we've got your message and someone will be in touch.",
       "There's no cost and no catch. We'll talk through sizes and getting it to you.",
       '',
       'Take a Seat',

@@ -21,6 +21,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-brass: var(--brass);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -64,6 +65,8 @@
   --secondary-foreground: oklch(0.3 0.03 60);
   --muted: oklch(0.945 0.012 80);
   --muted-foreground: oklch(0.44 0.02 65);
+  /* Brass, the bench rule in the wordmark */
+  --brass: oklch(0.57 0.09 87);
   /* Gold */
   --accent: oklch(0.79 0.11 82);
   --accent-foreground: oklch(0.28 0.04 60);

@@ -62,7 +62,7 @@ export default function BenchMap({ benches, center = [53.405, -2.94] }: Props) {
                       fontWeight: 600,
                     }}
                     >
-                    Test pin - no bench here yet
+                    Test pin, no bench here yet
                   </div>
                 )}
                 <div style={{ marginTop: 6 }}>

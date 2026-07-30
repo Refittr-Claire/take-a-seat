@@ -54,13 +54,13 @@ export function FindBench({ benches }: { benches: Bench[] }) {
     setStatus('')
       navigator.geolocation.getCurrentPosition(
       (pos) => {
-        // Coordinates stay in the browser - never sent anywhere.
+        // Coordinates stay in the browser, never sent anywhere.
         setOrigin([pos.coords.latitude, pos.coords.longitude])
         setBusy(false)
       },
       () => {
         setBusy(false)
-        setStatus('No worries - pop a town or postcode in below and we\u2019ll sort by that.')
+        setStatus('No worries, pop a town or postcode in below and we\u2019ll sort by that.')
       },
       { enableHighAccuracy: false, timeout: 8000 },
     )
@@ -129,7 +129,7 @@ export function FindBench({ benches }: { benches: Bench[] }) {
             </Link>
             , about <strong>{nearest._miles.toFixed(1)} miles</strong> away.
             {nearest.status === 'test' && (
-              <span className="ml-1 text-muted-foreground">(A test pin - no bench there yet.)</span>
+              <span className="ml-1 text-muted-foreground">(A test pin, no bench there yet.)</span>
             )}
           </p>
         )}
@@ -147,11 +147,11 @@ export function FindBench({ benches }: { benches: Bench[] }) {
         </span>
           <span className="inline-flex items-center gap-2">
           <span className="inline-block h-3 w-3 rounded-full border border-dashed border-[#7a5410] bg-[#c98a1a]" />{' '}
-          Test pin - no bench here yet
+          Test pin, no bench here yet
         </span>
       </p>
 
-      {/* Accessible plain-text list - always present, works without the map */}
+      {/* Accessible plain-text list, always present, works without the map */}
       <div className="mt-10">
         <h2 className="font-serif text-2xl font-semibold text-foreground">Every bench, as a list</h2>
         <ul className="mt-5 divide-y divide-border rounded-2xl border border-border">
@@ -165,7 +165,7 @@ export function FindBench({ benches }: { benches: Bench[] }) {
                     {b.location.name}
                     {b.status === 'test' && (
                       <span className="rounded-md bg-accent/40 px-2 py-0.5 text-sm font-semibold text-accent-foreground">
-                          Test pin - no bench here yet
+                          Test pin, no bench here yet
                         </span>
                     )}
                   </p>

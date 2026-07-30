@@ -13,11 +13,11 @@ export default function HomePage() {
             Take a seat, start a conversation.
           </h1>
           <p className="mt-6 text-pretty text-xl leading-relaxed text-foreground/90">
-            Old church pews, saved from the skip and given away - free - to the places people go to
-            be a little less alone.
+            Old church pews, saved from the skip and given away, free, to the places people go to be
+            a little less alone.
           </p>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Somewhere to sit down next to someone. That&apos;s really the whole idea.
+            Somewhere to sit down next to someone, have a chat, or just watch the world go by.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button asChild size="lg" className="text-lg">
@@ -43,11 +43,12 @@ export default function HomePage() {
       {/* The free bit */}
       <section className="mx-auto max-w-3xl px-5 py-16">
         <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
-          <h2 className="font-serif text-3xl font-semibold text-primary">It&apos;s free. Honestly.</h2>
+          <h2 className="font-serif text-3xl font-semibold text-primary">It&apos;s free, honestly.</h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed">
             We&apos;re not selling anything, and we won&apos;t come back later with a collection tin.
-            Benches go to communities, charities, CICs and the like  -  if you&apos;ve got a garden, a
-                courtyard, or a quiet corner that could hold one, just drop us a message.
+            Benches go to communities, charities, CICs and the like. If you&apos;ve got a garden, a
+            courtyard, or a quiet corner that could hold one, just send us a message and we&apos;ll
+            take it from there.
           </p>
         </div>
       </section>
@@ -57,7 +58,7 @@ export default function HomePage() {
         <div className="order-2 overflow-hidden rounded-2xl border border-border md:order-1">
           <Image
             src="/images/timber-grain.png"
-            alt="Close-up of old pew timber  -  honey-coloured where freshly cut, darker where hands have worn it smooth"
+            alt="Close-up of old pew timber, honey-coloured where freshly cut, darker where hands have worn it smooth"
             width={800}
             height={640}
             className="h-full w-full object-cover"
@@ -69,10 +70,10 @@ export default function HomePage() {
           </h2>
           <p className="mt-5 text-pretty text-lg leading-relaxed">
             Shoulder to shoulder, facing the same way, no need to talk and no hurry to leave. People
-            have sat through the biggest days of their lives on these - and a lot of ordinary Sundays
-            too. We&apos;re taking something that already works and setting it down wherever people
-            gather: a hospice garden, a sheltered courtyard, a library, a park, the quiet corner of a
-            corridor.
+            have sat through the biggest days of their lives on these, and a lot of ordinary Sundays
+            too. So we&apos;re taking something that already works and setting it down wherever
+            people gather: a hospice garden, a sheltered courtyard, a library, a park, the quiet
+            corner of a corridor.
           </p>
         </div>
       </section>
@@ -119,7 +120,7 @@ export default function HomePage() {
         </ol>
       </section>
 
-      {/* Quiet counters  -  engraved facts, low on the page */}
+      {/* Quiet counters, engraved facts, low on the page */}
       <section className="mx-auto max-w-6xl px-5 py-14">
         <dl className="grid grid-cols-1 gap-8 border-y border-border py-10 sm:grid-cols-3">
           <div className="text-center">

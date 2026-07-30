@@ -17,7 +17,7 @@ export default function FindPage() {
         <h1 className="text-balance font-serif text-4xl font-semibold md:text-5xl">Find a bench</h1>
         <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
           Here&apos;s where the benches are so far. The pins marked as tests are just us checking the
-          map works - there&apos;s no bench there yet. Every bench is in the list too, so this page
+          map works, so there&apos;s no bench there yet. Every bench is in the list too, so this page
           works fine without the map. Each bench has a small number and a QR code that shows a short,
           easy conversation starter.
         </p>

@@ -24,9 +24,9 @@ export async function submitBenchRequest(
   _prev: FormState,
   formData: FormData,
 ): Promise<FormState> {
-  // Honeypot - real people leave it empty.
+  // Honeypot, real people leave it empty.
   if (str(formData.get('website'))) {
-    return { ok: true, message: "Thanks - we've got that." }
+    return { ok: true, message: "Thanks, we've got that." }
   }
 
   if (!rateLimit(await callerKey('request'))) {
@@ -47,11 +47,13 @@ export async function submitBenchRequest(
     message: str(formData.get('message')),
   }
 
-  if (!data.organisation) return { ok: false, message: 'We need to know who you are - a name for the place.' }
-  if (!data.name) return { ok: false, message: 'We need a name so we know who we\u2019re talking to.' }
+  if (!data.organisation)
+    return { ok: false, message: 'Could you tell us the name of the place? A group or garden name is plenty.' }
+  if (!data.name) return { ok: false, message: 'And your name, so we know who we\u2019re talking to?' }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email))
-    return { ok: false, message: 'We need an email address that works, so we can reply.' }
-  if (!data.location) return { ok: false, message: 'We need a rough location - a town or postcode is plenty.' }
+    return { ok: false, message: 'We\u2019ll need an email address that works, so we can write back.' }
+  if (!data.location)
+    return { ok: false, message: 'A rough location would help, a town or postcode is plenty.' }
 
   try {
     await sendBenchRequest(data)
@@ -59,14 +61,15 @@ export async function submitBenchRequest(
     console.log('[v0] bench request send failed:', err)
     return {
       ok: false,
-      message: 'Something went wrong our end. Please try again, or email admin@refittr.co.uk.',
+      message:
+        'Sorry, something went wrong our end. Please try again, or just email us at admin@refittr.co.uk.',
     }
   }
 
   return {
     ok: true,
     message:
-      "Thank you - we\u2019ve got it. Someone will be in touch, and there\u2019s a note in your inbox to say we heard you.",
+      'Thank you, we\u2019ve got it. Someone will be in touch, and there\u2019s a note in your inbox to say we heard you.',
   }
 }
 
@@ -75,7 +78,7 @@ export async function submitPromptSuggestion(
   formData: FormData,
 ): Promise<FormState> {
   if (str(formData.get('website'))) {
-    return { ok: true, message: 'Thank you - that\u2019s in the pile.' }
+    return { ok: true, message: 'Thank you, that\u2019s in the pile.' }
   }
 
   if (!rateLimit(await callerKey('prompt'))) {
@@ -96,7 +99,7 @@ export async function submitPromptSuggestion(
     console.log('[v0] prompt suggestion send failed:', err)
     return {
       ok: false,
-      message: 'Something went wrong our end. Please try again in a moment.',
+      message: 'Sorry, something went wrong our end. Please try again in a moment.',
     }
   }
 

@@ -15,7 +15,7 @@ export default function ContactPage() {
           Say hello
         </h1>
         <p className="mt-5 text-pretty text-xl leading-relaxed text-muted-foreground">
-          A person reads every email  -  no ticket numbers, no bots. Whichever of these fits, we&apos;d
+          A person reads every email, no ticket numbers, no bots. Whichever of these fits, we&apos;d
           love to hear from you.
         </p>
       </header>
@@ -24,7 +24,7 @@ export default function ContactPage() {
         <section className="rounded-2xl border border-border bg-card p-7">
           <h2 className="font-serif text-2xl font-semibold text-primary">Want a bench?</h2>
           <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-            The quickest way is the form  -  it tells us what we need to find you the right one.
+            The quickest way is the form, it tells us what we need to find you the right one.
           </p>
           <div className="mt-5">
             <Button asChild className="text-base">
