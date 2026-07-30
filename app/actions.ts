@@ -55,10 +55,11 @@ export async function submitBenchRequest(
   if (!data.location)
     return { ok: false, message: 'A rough location would help, a town or postcode is plenty.' }
 
+  let acknowledged = false
   try {
-    await sendBenchRequest(data)
+    ;({ acknowledged } = await sendBenchRequest(data))
   } catch (err) {
-    console.log('[v0] bench request send failed:', err)
+    console.error('[take-a-seat] bench request send failed:', err)
     return {
       ok: false,
       message:
@@ -66,10 +67,12 @@ export async function submitBenchRequest(
     }
   }
 
+  // Only promise a confirmation email if one actually went out.
   return {
     ok: true,
-    message:
-      'Thank you, we\u2019ve got it. Someone will be in touch, and there\u2019s a note in your inbox to say we heard you.',
+    message: acknowledged
+      ? 'Thank you, we\u2019ve got it. Someone will be in touch, and there\u2019s a note in your inbox to say we heard you.'
+      : 'Thank you, we\u2019ve got it. Someone will read it and be in touch soon.',
   }
 }
 
@@ -96,7 +99,7 @@ export async function submitPromptSuggestion(
   try {
     await sendPromptSuggestion(question)
   } catch (err) {
-    console.log('[v0] prompt suggestion send failed:', err)
+    console.error('[take-a-seat] prompt suggestion send failed:', err)
     return {
       ok: false,
       message: 'Sorry, something went wrong our end. Please try again in a moment.',
