@@ -23,17 +23,25 @@ export default function AboutPage() {
       {/* Corkery Smith */}
       <section className="mt-12">
         <div className="flex items-center">
-          <Image
-            src="/logos/corkery-smith.png"
-            alt="Corkery Smith"
-            width={320}
-            height={64}
-            className="h-10 w-auto"
-          />
+          <a href="https://corkerysmithltd.com" className="transition-opacity hover:opacity-80">
+            <Image
+              src="/logos/corkery-smith.png"
+              alt="Corkery Smith"
+              width={320}
+              height={64}
+              className="h-10 w-auto"
+            />
+          </a>
         </div>
         <div className="mt-5 space-y-4 text-lg leading-relaxed text-foreground/90">
           <p>
-            Corkery Smith is a Liverpool demolition and construction firm, the people who are in the
+            <a
+              href="https://corkerysmithltd.com"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+            >
+              Corkery Smith
+            </a>{' '}
+            is a Liverpool demolition and construction firm, the people who are in the
             building as it comes out of use. When a church is stripped out, the pews are usually the
             first thing to the skip. Being the ones holding the crowbar, they&apos;re also the ones
             who can set the good timber aside instead.
@@ -53,19 +61,30 @@ export default function AboutPage() {
 
       {/* Refittr */}
       <section className="mt-12">
-        <div className="flex items-center gap-3">
+        <a
+          href="https://refittr.co.uk"
+          className="inline-flex items-center gap-3 transition-opacity hover:opacity-80"
+        >
           <Image
             src="/logos/refittr.jpg"
-            alt="Refittr"
+            alt=""
             width={48}
             height={48}
             className="h-11 w-11 rounded-md"
           />
-          <span className="font-serif text-2xl font-semibold text-primary">Refittr</span>
-        </div>
+          <span className="font-serif text-2xl font-semibold text-primary underline underline-offset-4">
+            Refittr
+          </span>
+        </a>
         <div className="mt-5 space-y-4 text-lg leading-relaxed text-foreground/90">
           <p>
-            Refittr is a Merseyside startup built on a stubborn idea: perfectly good things
+            <a
+              href="https://refittr.co.uk"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+            >
+              Refittr
+            </a>{' '}
+            is a Merseyside startup built on a stubborn idea: perfectly good things
             shouldn&apos;t go to landfill just because nobody joined the dots between what&apos;s
             being thrown out and who could use it. Their day job is matching second-hand home
             fixtures to the people they&apos;ll fit.

@@ -33,23 +33,44 @@ export function SiteFooter() {
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Behind it</h2>
           <p className="mt-3 text-muted-foreground">
-            A project by Refittr and Corkery Smith, in Merseyside.
+            A project by{' '}
+            <a
+              href="https://refittr.co.uk"
+              className="text-primary underline underline-offset-4 hover:no-underline"
+            >
+              Refittr
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://corkerysmithltd.com"
+              className="text-primary underline underline-offset-4 hover:no-underline"
+            >
+              Corkery Smith
+            </a>
+            , in Merseyside.
           </p>
           <div className="mt-4 flex items-center gap-5">
-            <Image
-              src="/logos/refittr.jpg"
-              alt="Refittr"
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-md"
-            />
-            <Image
-              src="/logos/corkery-smith.png"
-              alt="Corkery Smith"
-              width={150}
-              height={30}
-              className="h-6 w-auto"
-            />
+            <a
+              href="https://refittr.co.uk"
+              className="rounded-md transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/logos/refittr.jpg"
+                alt="Refittr"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-md"
+              />
+            </a>
+            <a href="https://corkerysmithltd.com" className="transition-opacity hover:opacity-80">
+              <Image
+                src="/logos/corkery-smith.png"
+                alt="Corkery Smith"
+                width={150}
+                height={30}
+                className="h-6 w-auto"
+              />
+            </a>
           </div>
         </div>
       </div>
