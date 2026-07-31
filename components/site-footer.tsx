@@ -35,21 +35,30 @@ export function SiteFooter() {
           <p className="mt-3 text-muted-foreground">
             A project by{' '}
             <a
-              href="https://refittr.co.uk"
-              className="text-primary underline underline-offset-4 hover:no-underline"
-            >
-              Refittr
-            </a>{' '}
-            and{' '}
-            <a
               href="https://corkerysmithltd.com"
               className="text-primary underline underline-offset-4 hover:no-underline"
             >
               Corkery Smith
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://refittr.co.uk"
+              className="text-primary underline underline-offset-4 hover:no-underline"
+            >
+              Refittr
             </a>
             , in Merseyside.
           </p>
           <div className="mt-4 flex items-center gap-5">
+            <a href="https://corkerysmithltd.com" className="transition-opacity hover:opacity-80">
+              <Image
+                src="/logos/corkery-smith.png"
+                alt="Corkery Smith"
+                width={150}
+                height={30}
+                className="h-6 w-auto"
+              />
+            </a>
             <a
               href="https://refittr.co.uk"
               className="rounded-md transition-opacity hover:opacity-80"
@@ -60,15 +69,6 @@ export function SiteFooter() {
                 width={40}
                 height={40}
                 className="h-10 w-10 rounded-md"
-              />
-            </a>
-            <a href="https://corkerysmithltd.com" className="transition-opacity hover:opacity-80">
-              <Image
-                src="/logos/corkery-smith.png"
-                alt="Corkery Smith"
-                width={150}
-                height={30}
-                className="h-6 w-auto"
               />
             </a>
           </div>

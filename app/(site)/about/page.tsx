@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Take a Seat is a project by Refittr and Corkery Smith in Merseyside, saving old church pews and giving them away as benches.',
+    'Take a Seat is a project by Corkery Smith and Refittr in Merseyside, saving old church pews and giving them away as benches.',
 }
 
 export default function AboutPage() {
