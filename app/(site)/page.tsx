@@ -30,10 +30,10 @@ export default function HomePage() {
         </div>
         <div className="overflow-hidden rounded-2xl border border-border">
           <Image
-            src="/images/pew-bench-park.png"
-            alt="A wooden church pew being used as a bench in a leafy park, two people sitting a little apart"
-            width={900}
-            height={700}
+            src="/images/pew-bench-park.jpg"
+            alt="An older couple sitting together on a church pew beside a woodland path, looking out at the trees"
+            width={1024}
+            height={1024}
             className="h-full w-full object-cover"
             priority
           />
