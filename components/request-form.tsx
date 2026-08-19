@@ -92,6 +92,32 @@ export function RequestForm() {
       </div>
 
       <fieldset>
+        <legend className="text-lg font-medium">What size?</legend>
+        <div className="mt-3 flex flex-wrap gap-3">
+          {[
+            { v: 'short', label: 'Small', hint: 'about 7 foot' },
+            { v: 'long', label: 'Long', hint: 'about 14 foot' },
+            { v: 'either', label: 'Either / not sure', hint: '' },
+          ].map((o, i) => (
+            <label
+              key={o.v}
+              className="flex cursor-pointer items-center gap-2 rounded-lg border border-input bg-card px-4 py-3 text-lg has-[:checked]:border-primary has-[:checked]:bg-primary/5"
+            >
+              <input
+                type="radio"
+                name="size"
+                value={o.v}
+                defaultChecked={i === 0}
+                className="h-5 w-5 accent-primary"
+              />
+              {o.label}
+              {o.hint && <span className="text-muted-foreground">({o.hint})</span>}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset>
         <legend className="text-lg font-medium">Indoor or outdoor?</legend>
         <div className="mt-3 flex flex-wrap gap-3">
           {[

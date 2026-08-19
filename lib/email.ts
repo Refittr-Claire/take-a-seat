@@ -44,9 +44,16 @@ export async function sendBenchRequest(data: {
   phone?: string
   location: string
   quantity: string
+  size: string
   setting: string
   message?: string
 }): Promise<{ acknowledged: boolean }> {
+  const sizes: Record<string, string> = {
+    short: 'Small, about 7 foot',
+    long: 'Long, about 14 foot',
+    either: 'Either / not sure',
+  }
+
   const body = [
     'New bench request',
     '------------------',
@@ -56,6 +63,7 @@ export async function sendBenchRequest(data: {
     `Phone:        ${data.phone || '-'}`,
     `Location:     ${data.location}`,
     `Benches:      ${data.quantity}`,
+    `Size:         ${sizes[data.size] || data.size || '-'}`,
     `Setting:      ${data.setting}`,
     '',
     'Message:',

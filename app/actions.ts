@@ -43,6 +43,7 @@ export async function submitBenchRequest(
     phone: str(formData.get('phone')),
     location: str(formData.get('location')),
     quantity: str(formData.get('quantity')),
+    size: str(formData.get('size')),
     setting: str(formData.get('setting')),
     message: str(formData.get('message')),
   }
