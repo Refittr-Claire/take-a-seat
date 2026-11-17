@@ -28,7 +28,7 @@ export function SiteHeader() {
           <Logo className="text-xl" />
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 xl:flex">
           {links.map((l) => {
             const active = pathname === l.href
             return (
@@ -36,7 +36,7 @@ export function SiteHeader() {
                 <Link
                   href={l.href}
                   className={cn(
-                    'rounded-md px-3 py-2 text-[0.95rem] font-medium transition-colors hover:bg-secondary',
+                    'whitespace-nowrap rounded-md px-3 py-2 text-[0.95rem] font-medium transition-colors hover:bg-secondary',
                     active ? 'text-primary underline underline-offset-4' : 'text-foreground',
                   )}
                 >
@@ -54,7 +54,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-secondary md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-secondary xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -65,7 +65,7 @@ export function SiteHeader() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-border bg-background md:hidden">
+        <div id="mobile-menu" className="border-t border-border bg-background xl:hidden">
           <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
             {links.map((l) => (
               <li key={l.href}>
