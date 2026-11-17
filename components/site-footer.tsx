@@ -25,6 +25,7 @@ export function SiteFooter() {
             <li><Link href="/find" className="hover:text-primary hover:underline underline-offset-4">Find a bench</Link></li>
             <li><Link href="/story" className="hover:text-primary hover:underline underline-offset-4">The story</Link></li>
             <li><Link href="/partners" className="hover:text-primary hover:underline underline-offset-4">For partners</Link></li>
+            <li><Link href="/sponsor" className="hover:text-primary hover:underline underline-offset-4">Sponsor a bench</Link></li>
             <li><Link href="/about" className="hover:text-primary hover:underline underline-offset-4">About</Link></li>
             <li><Link href="/contact" className="hover:text-primary hover:underline underline-offset-4">Contact</Link></li>
           </ul>

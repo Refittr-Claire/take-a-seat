@@ -1,0 +1,75 @@
+import type { Metadata } from 'next'
+import { Button } from '@/components/ui/button'
+import { getWaitingBenches, sponsorHref } from '@/lib/sponsorship'
+
+export const metadata: Metadata = {
+  title: 'Sponsor a bench',
+  description:
+    '£300 sponsors one bench for a community group in Merseyside that has asked for one and is waiting.',
+}
+
+export default function SponsorPage() {
+  const benches = getWaitingBenches()
+
+  return (
+    <div className="mx-auto max-w-4xl px-5 py-14 md:py-20">
+      <header className="max-w-2xl">
+        <h1 className="text-balance font-serif text-4xl font-semibold md:text-5xl">
+          Sponsor a bench
+        </h1>
+        <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+          £300 sponsors one bench. It goes to a community group that has asked for one and is
+          waiting. Your name goes on that bench&apos;s page, and we post a thank you when it is
+          handed over.
+        </p>
+      </header>
+
+      {benches.length > 0 ? (
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+          {benches.map((b) => (
+            <li
+              key={b.id}
+              className="flex flex-col rounded-2xl border border-border bg-card p-6 text-card-foreground"
+            >
+              <h2 className="font-serif text-2xl font-semibold text-foreground">{b.placeType}</h2>
+              {b.canName && b.recipientName && (
+                <p className="mt-1 text-lg text-foreground">{b.recipientName}</p>
+              )}
+              <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-base">
+                <dt className="text-muted-foreground">Area</dt>
+                <dd className="text-foreground">{b.area}</dd>
+                <dt className="text-muted-foreground">Size</dt>
+                <dd className="text-foreground">{b.size}</dd>
+              </dl>
+              <div className="mt-auto pt-6">
+                <Button asChild className="w-full sm:w-auto">
+                  <a href={sponsorHref(b.id)}>
+                    Sponsor this bench, £300
+                    <span className="sr-only">
+                      {' '}
+                      ({b.placeType}, {b.area})
+                    </span>
+                  </a>
+                </Button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-10 text-lg text-muted-foreground">
+          Every bench on our list has a sponsor right now.
+        </p>
+      )}
+
+      <p className="mt-12 text-lg text-foreground">
+        Want to talk first? Email{' '}
+        <a
+          href="mailto:hello@takeaseatproject.org"
+          className="font-medium text-primary underline underline-offset-4"
+        >
+          hello@takeaseatproject.org
+        </a>
+      </p>
+    </div>
+  )
+}

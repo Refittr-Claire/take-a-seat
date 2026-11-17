@@ -12,6 +12,7 @@ const links = [
   { href: '/find', label: 'Find a bench' },
   { href: '/story', label: 'The story' },
   { href: '/partners', label: 'For partners' },
+  { href: '/sponsor', label: 'Sponsor a bench' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]

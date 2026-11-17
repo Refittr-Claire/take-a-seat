@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getBench } from '@/lib/benches'
+import { getSponsorship } from '@/lib/sponsorship'
 import { pickPrompt } from '@/lib/prompts'
 import { PromptCard } from '@/components/prompt-card'
 
@@ -16,6 +17,7 @@ export default async function BenchPromptPage({
 }) {
   const { id } = await params
   const bench = getBench(id)
+  const sponsorship = getSponsorship(id)
 
   // A different question each visit, chosen on the server so it works with JS off.
   const initial = pickPrompt(Date.now())
@@ -49,6 +51,24 @@ export default async function BenchPromptPage({
           </p>
         ) : (
           <p className="text-sm text-muted-foreground">A pew that found a second life outdoors.</p>
+        )}
+        {sponsorship?.sponsorName && (
+          <p className="mt-3 text-sm text-muted-foreground">
+            This bench was sponsored by{' '}
+            {sponsorship.sponsorUrl ? (
+              <a
+                href={sponsorship.sponsorUrl}
+                target="_blank"
+                rel="noopener"
+                className="font-medium text-primary underline underline-offset-4"
+              >
+                {sponsorship.sponsorName}
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : (
+              <span className="font-medium text-foreground">{sponsorship.sponsorName}</span>
+            )}
+          </p>
         )}
         <p className="mt-3 text-sm text-muted-foreground">
           A free bench from{' '}
