@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
-import { getWaitingBenches, sponsorHref } from '@/lib/sponsorship'
+import { getWaitingGroups, sizeLabel, sponsorHref } from '@/lib/sponsorship'
 
 export const metadata: Metadata = {
   title: 'Sponsor a bench',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export default function SponsorPage() {
-  const benches = getWaitingBenches()
+  const groups = getWaitingGroups()
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 md:py-20">
@@ -19,14 +19,14 @@ export default function SponsorPage() {
         </h1>
         <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
           £300 sponsors one bench. It goes to a community group that has asked for one and is
-          waiting. Your name goes on that bench&apos;s page, and we post a thank you when it is
-          handed over.
+          waiting. Your logo goes on that bench&apos;s page, so it shows every time someone scans
+          it, and we post a thank you when it is handed over.
         </p>
       </header>
 
-      {benches.length > 0 ? (
+      {groups.length > 0 ? (
         <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-          {benches.map((b) => (
+          {groups.map(({ next: b, count }) => (
             <li
               key={b.id}
               className="flex flex-col rounded-2xl border border-border bg-card p-6 text-card-foreground"
@@ -39,11 +39,14 @@ export default function SponsorPage() {
                 <dt className="text-muted-foreground">Area</dt>
                 <dd className="text-foreground">{b.area}</dd>
                 <dt className="text-muted-foreground">Size</dt>
-                <dd className="text-foreground">{b.size}</dd>
+                <dd className="text-foreground">{sizeLabel(b.size)}</dd>
               </dl>
+              <p className="mt-3 text-base font-medium text-primary">
+                {count === 1 ? '1 bench waiting' : `${count} benches waiting`}
+              </p>
               <div className="mt-auto pt-6">
                 <Button asChild className="w-full sm:w-auto">
-                  <a href={sponsorHref(b.id)}>
+                  <a href={sponsorHref(b)}>
                     Sponsor this bench, £300
                     <span className="sr-only">
                       {' '}

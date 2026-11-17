@@ -10,6 +10,39 @@ export const metadata: Metadata = {
   robots: { index: false }, // per-bench screens shouldn't show up in search
 }
 
+function SponsorCredit({ name, url, logo }: { name: string; url?: string; logo?: string }) {
+  const content = (
+    <>
+      {logo && (
+        // Plain img: logos come in any shape, so let the browser keep the ratio.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={logo}
+          alt={name}
+          className="mx-auto h-auto max-h-20 w-auto max-w-full object-contain"
+        />
+      )}
+      <span className={logo ? 'mt-2 block' : 'block'}>{name}</span>
+    </>
+  )
+
+  if (!url) {
+    return <div className="mt-2 text-base font-medium text-foreground">{content}</div>
+  }
+
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener"
+      className="mt-2 inline-block rounded-md px-2 py-1 text-base font-medium text-primary underline underline-offset-4"
+    >
+      {content}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
+  )
+}
+
 export default async function BenchPromptPage({
   params,
 }: {
@@ -43,6 +76,18 @@ export default async function BenchPromptPage({
         </div>
       </div>
 
+      {/* Sponsor credit, below the question so the question stays the main thing */}
+      {sponsorship?.sponsorName && (
+        <section aria-label="Sponsor" className="mx-auto mb-10 w-full max-w-2xl text-center">
+          <p className="text-sm text-muted-foreground">Sponsored by</p>
+          <SponsorCredit
+            name={sponsorship.sponsorName}
+            url={sponsorship.sponsorUrl}
+            logo={sponsorship.sponsorLogo}
+          />
+        </section>
+      )}
+
       {/* Quiet footer */}
       <footer className="mx-auto w-full max-w-2xl text-center">
         {bench ? (
@@ -51,24 +96,6 @@ export default async function BenchPromptPage({
           </p>
         ) : (
           <p className="text-sm text-muted-foreground">A pew that found a second life outdoors.</p>
-        )}
-        {sponsorship?.sponsorName && (
-          <p className="mt-3 text-sm text-muted-foreground">
-            This bench was sponsored by{' '}
-            {sponsorship.sponsorUrl ? (
-              <a
-                href={sponsorship.sponsorUrl}
-                target="_blank"
-                rel="noopener"
-                className="font-medium text-primary underline underline-offset-4"
-              >
-                {sponsorship.sponsorName}
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            ) : (
-              <span className="font-medium text-foreground">{sponsorship.sponsorName}</span>
-            )}
-          </p>
         )}
         <p className="mt-3 text-sm text-muted-foreground">
           A free bench from{' '}
