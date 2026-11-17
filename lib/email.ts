@@ -115,6 +115,33 @@ export async function sendBenchRequest(data: {
   }
 }
 
+export async function sendSponsorRequest(data: {
+  email: string
+  benchId: string
+  placeType: string
+  area: string
+  size: string
+}) {
+  // Let it throw, so the form can tell the person to email us instead.
+  await send({
+    to: ADMIN,
+    subject: `Sponsor request: bench ${data.benchId}`,
+    replyTo: data.email,
+    text: [
+      'Someone wants to sponsor a bench.',
+      '',
+      `Email:  ${data.email}`,
+      `Bench:  ${data.benchId}`,
+      `Place:  ${data.placeType}`,
+      `Area:   ${data.area}`,
+      `Size:   ${data.size}`,
+      '',
+      'Reply to this email to get in touch with them. Once they have paid, set the',
+      "bench's status and sponsorName in lib/sponsorship.ts.",
+    ].join('\n'),
+  })
+}
+
 export async function sendPromptSuggestion(question: string) {
   await send({
     to: ADMIN,

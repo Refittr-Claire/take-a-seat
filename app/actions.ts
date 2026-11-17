@@ -1,8 +1,9 @@
 'use server'
 
 import { headers } from 'next/headers'
-import { sendBenchRequest, sendPromptSuggestion } from '@/lib/email'
+import { sendBenchRequest, sendPromptSuggestion, sendSponsorRequest } from '@/lib/email'
 import { rateLimit } from '@/lib/rate-limit'
+import { getSponsorship, sizeLabel } from '@/lib/sponsorship'
 
 export type FormState = {
   ok: boolean
@@ -74,6 +75,57 @@ export async function submitBenchRequest(
     message: acknowledged
       ? 'Thank you, we\u2019ve got it. Someone will be in touch, and there\u2019s a note in your inbox to say we heard you.'
       : 'Thank you, we\u2019ve got it. Someone will read it and be in touch soon.',
+  }
+}
+
+export async function submitSponsorRequest(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
+  if (str(formData.get('website'))) {
+    return { ok: true, message: "Thanks, we've got that." }
+  }
+
+  if (!rateLimit(await callerKey('sponsor'))) {
+    return {
+      ok: false,
+      message: "You've sent this a few times just now. Give it a few minutes and try again.",
+    }
+  }
+
+  const email = str(formData.get('email'))
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))
+    return { ok: false, message: 'We’ll need an email address that works, so we can write back.' }
+
+  // Look the bench up here rather than trusting details sent from the page.
+  const bench = getSponsorship(str(formData.get('benchId')))
+  if (!bench) {
+    return {
+      ok: false,
+      message: 'Sorry, we couldn’t find that bench. Please email us at hello@takeaseatproject.org.',
+    }
+  }
+
+  try {
+    await sendSponsorRequest({
+      email,
+      benchId: bench.id,
+      placeType: bench.placeType,
+      area: bench.area,
+      size: sizeLabel(bench.size),
+    })
+  } catch (err) {
+    console.error('[take-a-seat] sponsor request send failed:', err)
+    return {
+      ok: false,
+      message:
+        'Sorry, something went wrong our end. Please try again, or just email us at hello@takeaseatproject.org.',
+    }
+  }
+
+  return {
+    ok: true,
+    message: 'Thank you, we’ve got it. We’ll email you soon about sponsoring this bench.',
   }
 }
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Button } from '@/components/ui/button'
-import { getWaitingGroups, sponsorHref } from '@/lib/sponsorship'
+import { SponsorButton } from '@/components/sponsor-button'
+import { getWaitingGroups } from '@/lib/sponsorship'
 
 export const metadata: Metadata = {
   title: 'Sponsor a bench',
@@ -40,15 +40,7 @@ export default function SponsorPage() {
                 <dd className="text-foreground">{b.area}</dd>
               </dl>
               <div className="mt-auto pt-6">
-                <Button asChild className="w-full sm:w-auto">
-                  <a href={sponsorHref(b)}>
-                    Sponsor this bench, £300
-                    <span className="sr-only">
-                      {' '}
-                      ({b.placeType}, {b.area})
-                    </span>
-                  </a>
-                </Button>
+                <SponsorButton benchId={b.id} label={`${b.placeType}, ${b.area}`} />
               </div>
             </li>
           ))}

@@ -134,8 +134,9 @@ export function getWaitingGroups(): WaitingGroup[] {
   return [...groups.values()]
 }
 
-// Payment links are switched off for now, so every Sponsor button sends an
-// email instead. To turn Stripe on, set this to true and add
+// NOT USED AT THE MOMENT. The Sponsor button opens a short email form instead
+// (components/sponsor-button.tsx). Kept for when Stripe is decided: link the
+// button to sponsorHref(bench), set this to true and add
 // NEXT_PUBLIC_SPONSOR_PAYMENT_LINK in Vercel.
 const USE_PAYMENT_LINK = false
 
