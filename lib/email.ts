@@ -1,6 +1,8 @@
 import { Resend } from 'resend'
 
-const ADMIN = 'hello@takeaseatproject.org'
+// Must stay the Resend account's own address while EMAIL_FROM is unset, or the
+// shared sender refuses the email and every form submission fails.
+const ADMIN = 'admin@refittr.co.uk'
 
 // With no EMAIL_FROM we fall back to Resend's shared sender, which needs no
 // domain and no DNS, but will only deliver to the Resend account's own address.
