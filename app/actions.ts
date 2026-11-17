@@ -64,7 +64,7 @@ export async function submitBenchRequest(
     return {
       ok: false,
       message:
-        'Sorry, something went wrong our end. Please try again, or just email us at admin@refittr.co.uk.',
+        'Sorry, something went wrong our end. Please try again, or just email us at hello@takeaseatproject.org.',
     }
   }
 

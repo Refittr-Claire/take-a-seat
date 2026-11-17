@@ -1,6 +1,6 @@
 import { Resend } from 'resend'
 
-const ADMIN = 'admin@refittr.co.uk'
+const ADMIN = 'hello@takeaseatproject.org'
 
 // With no EMAIL_FROM we fall back to Resend's shared sender, which needs no
 // domain and no DNS, but will only deliver to the Resend account's own address.

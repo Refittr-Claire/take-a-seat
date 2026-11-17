@@ -40,7 +40,7 @@ export default function ContactPage() {
           </p>
           <div className="mt-5">
             <Button asChild variant="outline" className="text-base">
-              <a href="mailto:admin@refittr.co.uk">admin@refittr.co.uk</a>
+              <a href="mailto:hello@takeaseatproject.org">hello@takeaseatproject.org</a>
             </Button>
           </div>
         </section>
@@ -52,10 +52,10 @@ export default function ContactPage() {
           Writing something about the pews? We&apos;re glad to help, and happy to talk you through
           how it works and where the benches are going. Email{' '}
           <a
-            href="mailto:admin@refittr.co.uk"
+            href="mailto:hello@takeaseatproject.org"
             className="font-medium text-primary underline underline-offset-4"
           >
-            admin@refittr.co.uk
+            hello@takeaseatproject.org
           </a>{' '}
           with &ldquo;Press&rdquo; in the subject and we&apos;ll come back quickly.
         </p>

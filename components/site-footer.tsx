@@ -79,8 +79,8 @@ export function SiteFooter() {
       <div className="border-t border-border/70">
         <p className="mx-auto max-w-6xl px-5 py-5 text-sm text-muted-foreground">
           No cookies, no trackers. Just a website about benches.{' '}
-          <a href="mailto:admin@refittr.co.uk" className="underline underline-offset-4">
-            admin@refittr.co.uk
+          <a href="mailto:hello@takeaseatproject.org" className="underline underline-offset-4">
+            hello@takeaseatproject.org
           </a>
         </p>
       </div>

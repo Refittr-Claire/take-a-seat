@@ -104,10 +104,10 @@ export default function AboutPage() {
           Between them, one company saves the timber and the other finds it a home. There&apos;s no
           more to us than that. If you fancy a chat with an actual person, we&apos;re at{' '}
           <a
-            href="mailto:admin@refittr.co.uk"
+            href="mailto:hello@takeaseatproject.org"
             className="font-medium text-primary underline underline-offset-4"
           >
-            admin@refittr.co.uk
+            hello@takeaseatproject.org
           </a>
           .
         </p>
